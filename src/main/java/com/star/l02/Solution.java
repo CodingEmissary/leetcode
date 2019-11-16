@@ -8,6 +8,8 @@ package com.star.l02;
  *     ListNode(int x) { val = x; }
  * }
  */
+
+//https://www.bilibili.com/video/av51692387?p=2
 public class Solution {
 
   public class ListNode {
