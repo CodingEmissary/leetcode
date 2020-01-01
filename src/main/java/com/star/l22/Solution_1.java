@@ -18,11 +18,9 @@ public class Solution_1 {
   private void backtrack(String cur, int open, int close, int max){
     if (cur.length() == max * 2) {
       ans.add(cur);
-      System.out.println(cur);
       return;
     }
 
-    System.out.println(cur);
     if (open < max) backtrack(cur + "(", open + 1, close, max);
     if (close < open) backtrack(cur + ")", open, close + 1, max);
   }
