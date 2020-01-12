@@ -16,7 +16,7 @@ public class Solution_1 {
   int dales[];
   int n;
   // output
-  List<List<String>> output = new ArrayList();
+  List<List<String>> output = new ArrayList<>();
   // queens positions
   int queens[];
 
