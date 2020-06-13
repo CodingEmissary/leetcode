@@ -12,22 +12,13 @@ import java.util.LinkedList;
 public class Solution {
   public int[] dailyTemperatures(int[] T) {
     Deque<Integer> stack = new LinkedList<>();
-    int len = T.length;
-    int[] res = new int[len];
-    for (int i = 0; i < len;) {
-      if (stack.isEmpty() || (T[stack.peek()] >= T[i])){
-        stack.push(i);
-        i++;
-      }else {
-        int pre = stack.pop();
-        int duration = i - pre;
-        res[pre] = duration;
-
-        if (stack.isEmpty()) {
-          stack.push(i);
-          i++;
-        }
+    int[] res = new int[T.length];
+    for (int i = 0; i < T.length; i++) {
+      while (!stack.isEmpty() && T[stack.peek()] < T[i]) {
+        int prev = stack.pop();
+        res[prev] = i - prev;
       }
+      stack.push(i);
     }
     return res;
   }
