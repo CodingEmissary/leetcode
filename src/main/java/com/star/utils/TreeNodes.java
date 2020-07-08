@@ -22,6 +22,13 @@ public class TreeNodes {
         return node;
     }
 
+    public void inOrderPrint(TreeNode root){
+        if (root == null) return;
+        inOrderPrint(root.left);
+        System.out.println(root.val + ",");
+        inOrderPrint(root.right);
+    }
+
     public static void main(String[] args) {
         TreeNode n = TreeNodes.buildTree(new Integer[]{1,2,null,4,5,6});
         dfs(n);
